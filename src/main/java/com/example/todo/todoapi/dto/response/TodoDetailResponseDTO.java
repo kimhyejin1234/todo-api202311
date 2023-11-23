@@ -1,6 +1,7 @@
 package com.example.todo.todoapi.dto.response;
 
 
+import com.example.todo.todoapi.entity.Todo;
 import lombok.*;
 
 @Setter @Getter @ToString @EqualsAndHashCode
@@ -11,8 +12,8 @@ public class TodoDetailResponseDTO {
     private  boolean done;
 
     public TodoDetailResponseDTO(Todo todo) {
-        this.id = getTodoId();
-        this.title = getT
-                this.done = todo.isDone();
+        this.id = getId();
+        this.title = getTitle();
+        this.done = todo.isDone();
     }
 }
