@@ -12,8 +12,8 @@ public class TodoDetailResponseDTO {
     private  boolean done;
 
     public TodoDetailResponseDTO(Todo todo) {
-        this.id = getId();
-        this.title = getTitle();
+        this.id = todo.getTodoId();
+        this.title = todo.getTitle();
         this.done = todo.isDone();
     }
 }
