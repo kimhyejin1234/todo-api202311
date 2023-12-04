@@ -3,14 +3,16 @@ package com.example.todo.todoapi.dto.request;
 import lombok.*;
 
 import javax.validation.constraints.NotBlank;
-import java.security.PrivateKey;
-@Setter @Getter @ToString
-@NoArgsConstructor @AllArgsConstructor
-@Builder @EqualsAndHashCode
+
+@Setter @Getter
+@ToString @EqualsAndHashCode
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class TodoModifyRequestDTO {
 
     @NotBlank
-    private  String id;
-    private  boolean done;
+    private String id;
+    private boolean done;
 
 }

@@ -6,23 +6,21 @@ import lombok.*;
 
 import java.time.LocalDate;
 
-
-//로그인 성공 후 클라이언트에게 전송할 데이터 객체
-@Getter @ToString
+// 로그인 성공 후 클라이언트에게 전송할 데이터 객체
+@Getter
+@ToString @EqualsAndHashCode
 @NoArgsConstructor @AllArgsConstructor
-@EqualsAndHashCode @Builder
+@Builder
 public class LoginResponseDTO {
 
-    private  String email;
-    private  String userName;
+    private String email;
+    private String userName;
 
     @JsonFormat(pattern = "yyyy년 MM월 dd일")
     private LocalDate joinDate;
 
-    private  String token; //인증 토큰
-
-    private  String role; // 권한
-
+    private String token; // 인증 토큰
+    private String role; // 권한
 
     public LoginResponseDTO(User user, String token) {
         this.email = user.getEmail();
@@ -32,3 +30,15 @@ public class LoginResponseDTO {
         this.role = String.valueOf(user.getRole());
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+

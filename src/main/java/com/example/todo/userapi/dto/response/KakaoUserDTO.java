@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.springframework.context.annotation.Profile;
 
 import java.time.LocalDateTime;
 
@@ -38,3 +37,14 @@ public class KakaoUserDTO {
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+

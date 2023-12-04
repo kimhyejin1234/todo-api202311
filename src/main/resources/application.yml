@@ -8,12 +8,15 @@ spring:
     password: spring
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
-    # show-sql: true  ?? ??? ??? ???? ??
-    # ?? ?? -> ? DB? ?? ??? ??
     database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
-      ddl-auto: update # ?? DDL ?? ?? -> create? ???? ??? ???? ??? ?? ??.
-    database: mysql # DB ?? ??
+      ddl-auto: update
+    database: mysql
+  servlet:
+    multipart:
+      max-file-size: 10MB # 1개의 파일의 최대 사이즈 제한.
+      max-request-size: 20MB # 전체 요청의 최대 사이즈 제한.
+
 
 logging.level:
   org.hibernate.SQL: debug
@@ -23,10 +26,15 @@ springdoc:
   swagger-ui:
     path: /myapi.html
 
+jwt:
+  secret: XO5HNAcGS6PNO57jJt/4v8fuqHbt19X2dPKq1EPpwC0MWu4XYnNNKx7LvQT7ASFyKZRvHVe7XxHi1gwApYAW4Q==
+
+kakao:
+  client_id: a15e0ab314cdc9b507acc949bc405252
+  redirect_url: http://localhost:3000/oauth/redirected/kakao
+  client_secret: 8zrbPYgoLhTPo1uJFHdyQqGFaYQPx9bA
 
 
-
-
-
-
-
+#  업로드 파일 저장 경로
+upload:
+  path: C:/todo_upload

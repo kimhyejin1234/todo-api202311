@@ -16,11 +16,12 @@ import static org.junit.jupiter.api.Assertions.*;
 @Transactional
 @Rollback(false)
 class UserRepositoryTest {
+
     @Autowired
     UserRepository userRepository;
 
     @Test
-    @DisplayName("회원 가입 테스트")
+    @DisplayName("회원가입 테스트")
     void saveTest() {
         //given
         User newUser = User.builder()
@@ -28,10 +29,12 @@ class UserRepositoryTest {
                 .password("1234")
                 .userName("송아지")
                 .build();
-        //when
-        User saved = userRepository.save(newUser);//then
-        assertNotNull(saved);
 
+        //when
+        User saved = userRepository.save(newUser);
+
+        //then
+        assertNotNull(saved);
     }
 
     @Test
@@ -53,27 +56,40 @@ class UserRepositoryTest {
     }
 
     @Test
-    @DisplayName("이메일중복 체크 성공 하면 중복값이  test 여야 한다")
+    @DisplayName("이메일 중복체크를 하면 중복값이 true여야 한다.")
     void emailIsPresent() {
         //given
         String email = "abc1234@abc.com";
 
         //when
         boolean flag = userRepository.existsByEmail(email);
+
         //then
         assertTrue(flag);
     }
 
     @Test
-    @DisplayName("이메일 중복체크를 하면 중복 값이 false 여야 한다.")
+    @DisplayName("이메일 중복체크를 하면 중복값이 false여야 한다.")
     void emailIsNotPresent() {
         //given
-        String email = "kim1234@abc.com";
+        String email = "kim1234@naver.com";
 
         //when
         boolean flag = userRepository.existsByEmail(email);
 
         //then
         assertFalse(flag);
+    }
 
-    }}
+}
+
+
+
+
+
+
+
+
+
+
+

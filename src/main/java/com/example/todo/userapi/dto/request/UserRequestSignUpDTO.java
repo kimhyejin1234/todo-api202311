@@ -1,37 +1,50 @@
-package com.example.todo.userapi.dto;
+package com.example.todo.userapi.dto.request;
 
 import com.example.todo.userapi.entity.User;
 import lombok.*;
-import net.bytebuddy.asm.Advice;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-@Setter @Getter @ToString
-@EqualsAndHashCode(of = "email")
-@NoArgsConstructor @AllArgsConstructor @Builder
+@Setter @Getter
+@ToString @EqualsAndHashCode(of = "email")
+@NoArgsConstructor @AllArgsConstructor
+@Builder
 public class UserRequestSignUpDTO {
 
     @NotBlank
     @Email
-    private  String email;
+    private String email;
 
     @NotBlank
-    @Size(min = 8 , max = 20)
-    private  String password;
+    @Size(min = 8, max = 20)
+    private String password;
 
     @NotBlank
-    @Size(min = 2,max = 6)
-    private  String userName;
+    @Size(min = 2, max = 6)
+    private String userName;
 
-    //dto 를 Entity 로 변경하는 메서드
-    public User toEntity(){
+    // dto를 Entity로 변경하는 메서드
+    public User toEntity(String uploadedFilePath) {
         return User.builder()
                 .email(this.email)
                 .password(this.password)
                 .userName(this.userName)
+                .profileImg(uploadedFilePath)
                 .build();
     }
 
+
 }
+
+
+
+
+
+
+
+
+
+
+
