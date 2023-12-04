@@ -3,13 +3,18 @@ package com.example.todo.userapi.dto;
 import com.example.todo.userapi.entity.User;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.time.LocalDateTime;
 
-@Setter @Getter
-@ToString @EqualsAndHashCode(of = "email")
-@NoArgsConstructor @AllArgsConstructor
+@Setter
+@Getter
+@ToString
+@EqualsAndHashCode(of = "email")
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
+
 public class UserSignUpResponseDTO {
 
     private String email;

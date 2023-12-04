@@ -18,7 +18,8 @@ import java.util.List;
 @Slf4j
 @RequiredArgsConstructor
 @RequestMapping("/api/todos")
-//@CrossOrigin(origins = "http://localhost:3000") // 여기서 요청이 왔을떄 브라우저의 응답을 허용해준다
+//@CrossOrigin(origins = "http://localhost:3000") // 여기서 요청이 왔을떄 서로 다른 브라우저의 응답을 허용해준다
+@CrossOrigin
 public class TodoController {
 
     private final  TodoService todoService;
