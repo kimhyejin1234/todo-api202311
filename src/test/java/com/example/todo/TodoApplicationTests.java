@@ -22,7 +22,7 @@ class TodoApplicationTests {
 		random.nextBytes(key);
 		String encodedKey = Base64.getEncoder().encodeToString(key);
 		System.out.println("\n\n\n");
-		System.out.println("encodedKey = " + encodedKey);
+		System.out.println("encodedKey !!!!!!!!!= " + encodedKey);
 		System.out.println("\n\n\n");
 	}
 
