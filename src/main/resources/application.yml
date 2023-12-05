@@ -27,7 +27,7 @@ springdoc:
     path: /myapi.html
 
 jwt:
-  secret: XO5HNAcGS6PNO57jJt/4v8fuqHbt19X2dPKq1EPpwC0MWu4XYnNNKx7LvQT7ASFyKZRvHVe7XxHi1gwApYAW4Q==
+  secret: qU2ztB9MPwoe6d5cNMloQ86pXjcpMeL0iDHXj2/Cwc01iaYJ+SfQpWO1KbbyHMqhWvvLQs62gYXdqHQZ2Iszyw==
 
 
 #  업로드 파일 저장 경로
